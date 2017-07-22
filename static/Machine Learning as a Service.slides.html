@@ -12494,7 +12494,7 @@ dtype: int64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f082bcf0c88&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fbfd64acc50&gt;</pre>
 </div>
 
 </div>
@@ -12721,7 +12721,7 @@ AAAASUVORK5CYII=
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f0828942978&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fbfd3100780&gt;</pre>
 </div>
 
 </div>
@@ -12858,7 +12858,7 @@ MvEFgGT/B4MGlJCml44XAAAAAElFTkSuQmCC
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f08289125f8&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fbfd30960b8&gt;</pre>
 </div>
 
 </div>
@@ -13081,7 +13081,7 @@ MBQhAAAAQxECAAAwFCEAAABDEQIAADDU/wPVO1XNltSCDAAAAABJRU5ErkJggg==
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f0828796f60&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fbfd2e9a908&gt;</pre>
 </div>
 
 </div>
@@ -13500,7 +13500,7 @@ SMLUUIiIiEjC1FCIiIhIwv4fHfvgrWJy6ocAAAAASUVORK5CYII=
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f0828596d68&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fbfd2e83320&gt;</pre>
 </div>
 
 </div>
@@ -22642,11 +22642,11 @@ Media roc della cross validation: 0.656793726449
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>0.653413587285
-0.634923043391
+0.6339581517
 0.654500918349
 0.713544727131
 0.729143232253
-Media roc della cross validation: 0.677105101682
+Media roc della cross validation: 0.676912123344
 </pre>
 </div>
 </div>
@@ -22735,12 +22735,12 @@ Media roc della cross validation: 0.677105101682
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0.683225471129
-0.677885453692
-0.700622362055
-0.739670670244
-0.744772796717
-Media roc della cross validation: 0.709235350767
+<pre>0.668768023607
+0.663910032862
+0.677316942955
+0.746638036109
+0.759306889801
+Media roc della cross validation: 0.703187985067
 </pre>
 </div>
 </div>
@@ -22770,12 +22770,12 @@ Media roc della cross validation: 0.709235350767
 <div class="prompt"></div>
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>0.705350915432
-0.68526674938
-0.721200435167
-0.779195781302
-0.805226867506
-Media roc della cross validation: 0.739248149757
+<pre>0.706256287305
+0.689103681846
+0.71609159316
+0.784133377208
+0.809347686667
+Media roc della cross validation: 0.740986525237
 </pre>
 </div>
 </div>
@@ -22800,6 +22800,45 @@ Media roc della cross validation: 0.739248149757
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">final_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">final_model</span> <span class="o">=</span> <span class="n">final_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Serializzazione-del-modello">Serializzazione del modello<a class="anchor-link" href="#Serializzazione-del-modello">&#182;</a></h2><p>Processare 7727 righe è stato facile, ma se dobbiamo elaborare un modello su vari Gb di dati?</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Elaboriamo-una-tantum-e-ci-salviamo-il-classificatore-gi&#224;-istruito!">Elaboriamo una tantum e ci salviamo il classificatore gi&#224; istruito!<a class="anchor-link" href="#Elaboriamo-una-tantum-e-ci-salviamo-il-classificatore-gi&#224;-istruito!">&#182;</a></h1>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.externals</span> <span class="k">import</span> <span class="n">joblib</span>
+
+<span class="c1"># dumpiamo il classificatore</span>
+<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">final_model</span><span class="p">,</span> <span class="s2">&quot;model.pkl&quot;</span><span class="p">)</span>
+
+<span class="c1"># e le classi di cui abbiamo fatto l&#39;encoding</span>
+<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">le_grade</span><span class="p">,</span> <span class="s2">&quot;le_grade.pkl&quot;</span><span class="p">)</span>
+<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">le_ownership</span><span class="p">,</span> <span class="s2">&quot;le_ownership.pkl&quot;</span><span class="p">);</span>
 </pre></div>
 
 </div>
