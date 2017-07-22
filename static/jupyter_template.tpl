@@ -149,20 +149,16 @@ require(
                 { src: "{{resources.reveal.url_prefix}}/plugin/notes/notes.js",
                   async: true,
                   condition: function() { return !!document.body.classList; } },
+                { src: "{{resources.reveal.url_prefix}}/plugin/math/math.js",
+                  async: true},
                 { src: 'plugin/title-footer/title-footer.js', async: true, callback: function() { title_footer.initialize(
                   // Change footer here
           '© 2017 Energee3 srl.  All rights reserved.', 'rgba(255,255,255,0.5)'
           ); } }
             ]
         });
-        var update = function(event){
-          if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
-            MathJax.Hub.Rerender(Reveal.getCurrentSlide());
-          }
-        };
-        Reveal.addEventListener('slidechanged', update);
-        Reveal.addEventListener('fragmentshown', update);
-        Reveal.addEventListener('fragmenthidden', update);
+        
+        
         var update_scroll = function(event){
           $(".reveal").scrollTop(0);
         };

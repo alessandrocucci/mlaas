@@ -6,7 +6,7 @@ def build(run=False):
     os.chdir("static")
 
     for file_ in glob.glob("*.ipynb"):
-        call(["jupyter", "nbconvert", file_, "--to", "slides", '--reveal-prefix', '"reveal.js-3.1.0"', "--config", "slides_config.py"])
+        call(["jupyter", "nbconvert", file_, "--to", "slides", '--reveal-prefix', '"reveal.js"', "--config", "slides_config.py"])
         break
 
     for file_ in glob.glob("*.html"):

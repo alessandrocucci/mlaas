@@ -15,7 +15,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <!-- General and theme style sheets -->
-<link rel="stylesheet" href="reveal.js-3.1.0/css/reveal.css">
+<link rel="stylesheet" href="reveal.js/css/reveal.css">
 <link rel="stylesheet" href="css/custom.css" id="theme">
 
 <!-- If the query includes 'print-pdf', include the PDF print sheet -->
@@ -24,14 +24,14 @@ if( window.location.search.match( /print-pdf/gi ) ) {
         var link = document.createElement( 'link' );
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = 'reveal.js-3.1.0/css/print/pdf.css';
+        link.href = 'reveal.js/css/print/pdf.css';
         document.getElementsByTagName( 'head' )[0].appendChild( link );
 }
 
 </script>
 
 <!--[if lt IE 9]>
-<script src="reveal.js-3.1.0/lib/js/html5shiv.js"></script>
+<script src="reveal.js/lib/js/html5shiv.js"></script>
 <![endif]-->
 
 <!-- Get Font-awesome from cdn -->
@@ -11833,7 +11833,7 @@ div.output_prompt {
 <section data-background="img/cover.jpg" data-state="img-transparent no-title-footer">
 <div class="intro-body">
 <div class="intro_h1 " style="text-align: center;"><h1>Machine Learning <br>as a Service</h1></div>
-<h3 style="text-align: center;">direttamente da Europython 2017</h3>
+<h3 style="text-align: center;">appunti di un workshop a Europython 2017</h3>
 <p style="text-align: center;"><strong>Alessandro Cucci</strong> <span class="b"></span> <span>Energee3 srl</span></p>
 <p>&nbsp;</p>
 <p>&nbsp;</p>
@@ -12494,7 +12494,7 @@ dtype: int64</pre>
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fe6e1aaec88&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f082bcf0c88&gt;</pre>
 </div>
 
 </div>
@@ -12721,7 +12721,7 @@ AAAASUVORK5CYII=
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fe6de5e36a0&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f0828942978&gt;</pre>
 </div>
 
 </div>
@@ -12858,7 +12858,7 @@ MvEFgGT/B4MGlJCml44XAAAAAElFTkSuQmCC
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fe6de6d1e80&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f08289125f8&gt;</pre>
 </div>
 
 </div>
@@ -13081,7 +13081,7 @@ MBQhAAAAQxECAAAwFCEAAABDEQIAADDU/wPVO1XNltSCDAAAAABJRU5ErkJggg==
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fe6de49da90&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f0828796f60&gt;</pre>
 </div>
 
 </div>
@@ -13500,7 +13500,7 @@ SMLUUIiIiEjC1FCIiIhIwv4fHfvgrWJy6ocAAAAASUVORK5CYII=
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7fe6de648470&gt;</pre>
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f0828596d68&gt;</pre>
 </div>
 
 </div>
@@ -15486,6 +15486,47 @@ X6Cdi/Xh3BG7GDLQFfUBTBf1C7RzsT6cO2IXQwa6oj6A6aJ+gXYu1odzR+xiyEBX1AcwXdQv0M7F
 <h2 id="Fine">Fine<a class="anchor-link" href="#Fine">&#182;</a></h2><ul>
 <li>scrivere un programma in grado di costruire una serie di "domande" a partire dai dati di storico</li>
 </ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Criterio-di-partizione:-Algoritmo-CART">Criterio di partizione: Algoritmo CART<a class="anchor-link" href="#Criterio-di-partizione:-Algoritmo-CART">&#182;</a></h3><ol>
+<li>si genera l’insieme S di tutte le possibili partizioni binarie ottenute dal set di predittori X;</li>
+<li>per ogni split s dell’insieme S si calcola il decremento di impurità;</li>
+<li>si determina la miglior partizione a cui é associato il massimo decremento di impurità.</li>
+</ol>
+<p>L’algoritmo é applicato ad ogni nodo ﬁno a che la costruzione dell’albero non si arresta.</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Indice-H-di-eterogeneit&#224;-di-Gini-(misura-di-impurit&#224;)">Indice H di eterogeneit&#224; di Gini (misura di impurit&#224;)<a class="anchor-link" href="#Indice-H-di-eterogeneit&#224;-di-Gini-(misura-di-impurit&#224;)">&#182;</a></h2><p>Esso si definisce in generale come:</p>
+<p>$H = 1 - \sum\limits_{j = 1}^J {f_j^2 }$</p>
+<p>Dove $f_j$ rappresenta la frequenza relativa di osservazioni la cui modalità della variabile è pari a j.</p>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Indice-H-di-eterogeneit&#224;-di-Gini-(misura-di-impurit&#224;)">Indice H di eterogeneit&#224; di Gini (misura di impurit&#224;)<a class="anchor-link" href="#Indice-H-di-eterogeneit&#224;-di-Gini-(misura-di-impurit&#224;)">&#182;</a></h2><p>In un classificatore binario, l’impurità in un nodo sarà quindi pari a:</p>
+<p>$i_Y (t) = 1 - \sum\limits_{j = 1}^J {p^2 \left( {t\left| {Y = j} \right.} \right)}$</p>
+<p>Dove  $i_Y (t)$ è la misura di impurità in un generico nodo t
+e  $p \left( {t\left| {Y = j} \right.} \right)$ è la proporzione di unità nel nodo t che appartengono alla j-esima classe della variabile di risposta Y.</p>
+<p>Per maggiori info: <a href="https://it.wikipedia.org/wiki/Indice_di_eterogeneità_di_Gini">https://it.wikipedia.org/wiki/Indice_di_eterogeneità_di_Gini</a></p>
 
 </div>
 </div>
@@ -20447,7 +20488,7 @@ EXAAAAxEwAEAMBABBwDAQAQcAAADEXAAAAz0/wDPTlaAs5+k3wAAAABJRU5ErkJggg==
 
 </div>
 </div>
-</div>
+</div></section><section>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[25]:</div>
@@ -22471,10 +22512,10 @@ IkSJJs/kGUl/Jyex/9k=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Algoritmo-per-ottenere-la-media-della-valutazione-ROC-usando-la-Cross-Validation">Algoritmo per ottenere la media della valutazione ROC usando la Cross-Validation<a class="anchor-link" href="#Algoritmo-per-ottenere-la-media-della-valutazione-ROC-usando-la-Cross-Validation">&#182;</a></h3><ul>
-<li>Per ogni iterazione<ul>
 <li>Generazione dei k-fold</li>
-<li>Training del modello usando k-1 fold</li>
-<li>Previsione dell'k-esimo fold</li>
+<li>Per ogni fold<ul>
+<li>Training del modello</li>
+<li>Previsione</li>
 <li>Calcolo dell'accuratezza.</li>
 </ul>
 </li>
@@ -22483,6 +22524,288 @@ IkSJJs/kGUl/Jyex/9k=
 
 </div>
 </div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Prepariamo-l'occorrente">Prepariamo l'occorrente<a class="anchor-link" href="#Prepariamo-l'occorrente">&#182;</a></h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">df_encoded</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">1</span><span class="p">:]</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">df_encoded</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">cross_val</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">k</span><span class="p">):</span>
+    
+    <span class="n">kf</span> <span class="o">=</span> <span class="n">StratifiedKFold</span><span class="p">(</span><span class="n">n_splits</span><span class="o">=</span><span class="n">k</span><span class="p">)</span>
+    
+    <span class="n">kfold_auc_score</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">train_index</span><span class="p">,</span> <span class="n">test_index</span> <span class="ow">in</span> <span class="n">kf</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span><span class="n">y</span><span class="p">):</span>
+        <span class="n">clf</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_index</span><span class="p">],</span> <span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">train_index</span><span class="p">])</span>
+        <span class="n">dt_prediction</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">test_index</span><span class="p">])[:,</span><span class="mi">1</span><span class="p">]</span>
+        <span class="n">auc_score</span> <span class="o">=</span> <span class="n">roc_auc_score</span><span class="p">(</span><span class="n">y</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">test_index</span><span class="p">],</span><span class="n">dt_prediction</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">auc_score</span><span class="p">)</span>
+        <span class="n">kfold_auc_score</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">auc_score</span><span class="p">)</span>
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Media roc della cross validation:&quot;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">kfold_auc_score</span><span class="p">))</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf_dt_2</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cross validation: profondità = 2, k = 3&quot;</span><span class="p">)</span>
+<span class="n">cross_val</span><span class="p">(</span><span class="n">clf_dt_2</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Cross validation: profondità = 2, k = 5&quot;</span><span class="p">)</span>
+<span class="n">cross_val</span><span class="p">(</span><span class="n">clf_dt_2</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Cross validation: profondità = 2, k = 3
+0.626445552369
+0.634841191943
+0.712316327567
+Media roc della cross validation: 0.657867690626
+
+Cross validation: profondità = 2, k = 5
+0.642202903896
+0.606714841392
+0.63267291659
+0.696277411968
+0.706100558397
+Media roc della cross validation: 0.656793726449
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf_dt_5</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">max_depth</span><span class="o">=</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">cross_val</span><span class="p">(</span><span class="n">clf_dt_5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0.653413587285
+0.634923043391
+0.654500918349
+0.713544727131
+0.729143232253
+Media roc della cross validation: 0.677105101682
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Caratteristica-principale-degli-Alberi-Decisionali">Caratteristica principale degli Alberi Decisionali<a class="anchor-link" href="#Caratteristica-principale-degli-Alberi-Decisionali">&#182;</a></h3><h1 id="Bias-basso-e-varianza-alta!">Bias basso e varianza alta!<a class="anchor-link" href="#Bias-basso-e-varianza-alta!">&#182;</a></h1><ul>
+<li><p>Bias nullo vuol dire che possiamo sempre fare domande fino a distinguere correttamente tutti gli elementi uno dall'altro.</p>
+</li>
+<li><p>Varianza alta perchè costruire un simile albero è possibile in molti modi.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h1 id="Come-ridurre-la-varianza?">Come ridurre la varianza?<a class="anchor-link" href="#Come-ridurre-la-varianza?">&#182;</a></h1><ul>
+<li>ridurre il numero di nodi nell'albero</li>
+<li>usare una metodologia di ensamble: es. Random Forest</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li><p>Lo scopo è combinare la predizione di molti stimatori per migliorare la generalizzazione delle regole.</p>
+</li>
+<li><p>Come? Costruire molti alberi diversi e poi fare la media delle previsioni. Usando questa media, la stima è di solito migliore rispetto al singolo perchè la varianza è minore.</p>
+</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Random-Forest">Random Forest<a class="anchor-link" href="#Random-Forest">&#182;</a></h2><p>Nelle foreste randomiche, ogni albero è costruito a partire da esempi presi a caso dal dataset. In più, per decidere la divisione del ramo, viene scelto quello migliore su una selezione casuale delle features.</p>
+<ul>
+<li>leggero aumento del bias</li>
+<li>diminuzione della varianza</li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.ensemble</span> <span class="k">import</span> <span class="n">RandomForestClassifier</span>
+
+<span class="n">clf_rf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">cross_val</span><span class="p">(</span><span class="n">clf_rf</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0.683225471129
+0.677885453692
+0.700622362055
+0.739670670244
+0.744772796717
+Media roc della cross validation: 0.709235350767
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section><section>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">clf_rf_100</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">cross_val</span><span class="p">(</span><span class="n">clf_rf_100</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+<div class="prompt"></div>
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>0.705350915432
+0.68526674938
+0.721200435167
+0.779195781302
+0.805226867506
+Media roc della cross validation: 0.739248149757
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div></section></section><section><section>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Modello-Finale:">Modello Finale:<a class="anchor-link" href="#Modello-Finale:">&#182;</a></h3><h2 id="Random-Forest-(100-alberi)">Random Forest (100 alberi)<a class="anchor-link" href="#Random-Forest-(100-alberi)">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">final_model</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">n_estimators</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">final_model</span> <span class="o">=</span> <span class="n">final_model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
 </div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
@@ -22519,8 +22842,8 @@ require(
       waitSeconds: 15
     },
     [
-      "reveal.js-3.1.0/lib/js/head.min.js",
-      "reveal.js-3.1.0/js/reveal.js"
+      "reveal.js/lib/js/head.min.js",
+      "reveal.js/js/reveal.js"
     ],
 
     function(head, Reveal){
@@ -22536,22 +22859,15 @@ require(
 
             // Optional libraries used to extend on reveal.js
             dependencies: [
-                { src: "reveal.js-3.1.0/lib/js/classList.js",
+                { src: "reveal.js/lib/js/classList.js",
                   condition: function() { return !document.body.classList; } },
-                { src: "reveal.js-3.1.0/plugin/notes/notes.js",
+                { src: "reveal.js/plugin/notes/notes.js",
                   async: true,
                   condition: function() { return !!document.body.classList; } }
             ]
         });
 
-        var update = function(event){
-          if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
-            MathJax.Hub.Rerender(Reveal.getCurrentSlide());
-          }
-        };
-
-        Reveal.addEventListener('slidechanged', update);
-
+        
         var update_scroll = function(event){
           $(".reveal").scrollTop(0);
         };
@@ -22574,8 +22890,8 @@ require(
       waitSeconds: 15
     },
     [
-      "reveal.js-3.1.0/lib/js/head.min.js",
-      "reveal.js-3.1.0/js/reveal.js"
+      "reveal.js/lib/js/head.min.js",
+      "reveal.js/js/reveal.js"
     ],
     function(head, Reveal){
         // Full list of configuration options available here: https://github.com/hakimel/reveal.js#configuration
@@ -22588,25 +22904,21 @@ require(
             transition: Reveal.getQueryHash().transition || 'linear', // default/cube/page/concave/zoom/linear/none
             // Optional libraries used to extend on reveal.js
             dependencies: [
-                { src: "reveal.js-3.1.0/lib/js/classList.js",
+                { src: "reveal.js/lib/js/classList.js",
                   condition: function() { return !document.body.classList; } },
-                { src: "reveal.js-3.1.0/plugin/notes/notes.js",
+                { src: "reveal.js/plugin/notes/notes.js",
                   async: true,
                   condition: function() { return !!document.body.classList; } },
+                { src: "reveal.js/plugin/math/math.js",
+                  async: true},
                 { src: 'plugin/title-footer/title-footer.js', async: true, callback: function() { title_footer.initialize(
                   // Change footer here
           '© 2017 Energee3 srl.  All rights reserved.', 'rgba(255,255,255,0.5)'
           ); } }
             ]
         });
-        var update = function(event){
-          if(MathJax.Hub.getAllJax(Reveal.getCurrentSlide())){
-            MathJax.Hub.Rerender(Reveal.getCurrentSlide());
-          }
-        };
-        Reveal.addEventListener('slidechanged', update);
-        Reveal.addEventListener('fragmentshown', update);
-        Reveal.addEventListener('fragmenthidden', update);
+        
+        
         var update_scroll = function(event){
           $(".reveal").scrollTop(0);
         };
