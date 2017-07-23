@@ -18,4 +18,7 @@ def build(run=False):
         call(["python", "run.py"])
 
 if __name__ == "__main__":
-    build(run=True if sys.argv[1] in ("run", "r", "-r") else False)
+    try:
+        build(run=True if sys.argv[1] in ("run", "r", "-r") else False)
+    except IndexError:
+        build()
